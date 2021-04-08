@@ -28,6 +28,10 @@ def add():
 @app.route("/delete") #Add Student
 def delete():
   return '{"Result":"Not Yet Implemented"}'
+  
+@app.route("/deleted") #Add Student
+def deleted():
+  return '{"Result":"Not Yet done"}'
 
 @app.route("/") #Default - Show Data
 def hello(): # Name of the method
