@@ -14,16 +14,10 @@ app.config['MYSQL_DB'] = 'student'
 app.config['MYSQL_HOST'] = 'localhost' #for now
 mysql.init_app(app)
 
-@app.route("/add") #Add Student
-def add():
-  name = request.args.get('name')
-  email = request.args.get('email')
-  cur = mysql.connection.cursor() #create a connection to the SQL instance
-  s='''INSERT INTO students(studentName, email) VALUES('{}','{}');'''.format(name,email)
-  cur.execute(s)
-  mysql.connection.commit()
+@app.route("/delete") #Add Student
+def delete():
+  return '{"Result":"Not Yet Implemented"}'
 
-  return '{"Result":"Success"}'
 @app.route("/") #Default - Show Data
 def hello(): # Name of the method
   cur = mysql.connection.cursor() #create a connection to the SQL instance
