@@ -44,7 +44,7 @@ def update():
  print (name)
  print (email)
  cur = mysql.connection.cursor()
- s = '''UPDATE students SET studentName = %s, email = %s WHERE studentID = %s''' %id2 %name %email
+ s = '''UPDATE students SET studentName = "%s", email = "%s" WHERE studentID = %s''' %(id2,name,email)
  cur.execute(s)
  mysql.connection.commit()
  
