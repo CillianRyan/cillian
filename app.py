@@ -25,13 +25,23 @@ def add():
 
   return '{"Result":"Success"}'
 
-@app.route("/delete") #Add Student
+@app.route("/delete") #Delete Student
 def delete():
-  return '{"Result":"Not Yet Implemented"}'
+ id2 = request.args.get('id')
+ cur = mysql.connection.cursor()
+ s = "delete from students where studentID = '%s'" % id2
+ cur.execute(s)
+ mysql.connection.commit()
+
+ return '{"Result":"Delete Successful"}'
+
+#@app.route("/delete") #Add Student
+#def delete2():
+ #return '{"Result":"Not Yet Implemented"}'
   
-@app.route("/deleted") #Add Student
-def deleted():
-  return '{"Result":"Not Yet done"}'
+#@app.route("/deleted") #Add Student
+#def deleted():
+ #return '{"Result":"Not Yet done"}'
 
 @app.route("/") #Default - Show Data
 def hello(): # Name of the method
