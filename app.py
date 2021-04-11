@@ -34,6 +34,11 @@ def delete():
  mysql.connection.commit()
 
  return '{"Result":"Delete Successful"}'
+ 
+@app.route("/update") #Update Student
+def update():
+
+ return '{"Result":"Update not complete"}'
 
 #@app.route("/delete") #Add Student
 #def delete2():
