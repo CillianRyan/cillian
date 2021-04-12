@@ -6,6 +6,8 @@ import json
 mysql = MySQL()
 app = Flask(__name__)
 CORS(app)
+# My SQL Instance configurations
+# Change the HOST IP and Password to match your instance configurations
 with open('.mysql_config') as f:
   mysql_config=json.loads(f.read())
 app.config['MYSQL_USER'] = mysql_config['user']
