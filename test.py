@@ -1,15 +1,17 @@
 import pypyodbc
+with open(".pw") as f:
+  password = f.read()
 
 connection=connection = pypyodbc.connect('Driver={ODBC Driver 17 for SQL Server};'
-'Server=52.233.255.163;'
+'Server=cilliandb.dbsprojects.ie;'
 'Database=master;'
 'encrypt=yes;'
 'TrustServerCertificate=yes;'
 'UID=sa;'
-'PWD=advancedProgramming2',autocommit = True)
+'PWD='+password,autocommit = True)
 
 cursor = connection.cursor()
-SQLCommand = ("CREATE DATABASE Customer1;")
+SQLCommand = ("CREATE DATABASE Customer2;")
 cursor.execute(SQLCommand)
 print('done')
 
