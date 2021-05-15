@@ -89,6 +89,31 @@ def topScorers():
     mimetype='application/json'
   )
   return ret #Return the data in a string format
+  
+@app.route("/topAssists")
+def topAssists():
+  cur = conn2.cursor() #create a connection to the SQL instance
+  cur.execute('''SELECT * FROM topAssists''') # execute an SQL statment
+  rv = cur.fetchall() #Retreive all rows returend by the SQL statment
+  Results=[]
+  for row in rv: #Format the Output Results and add to return string
+    Result={}
+    Result['firstName']=row[0].replace('\n',' ')
+    Result['lastName']=row[1]
+    Result['age']=row[2]
+    Result['nationality']=row[3]
+    Result['team']=row[4]
+    Result['appearances']=row[5]
+    Result['goals']=row[6]
+    Result['assists']=row[7]
+    Results.append(Result)
+  response={'Results':Results, 'count':len(Results)}
+  ret=app.response_class(
+    response=json.dumps(response),
+    status=200,
+    mimetype='application/json'
+  )
+  return ret #Return the data in a string format
 
 
 @app.route("/") #Default - Show Data
