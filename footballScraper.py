@@ -52,7 +52,6 @@ while counter < len(info["response"]):
                 conn2.commit()
                 counter = counter + 1
 
-cur.close()
 
 with open(".apikey") as f:
   key = f.read()
@@ -90,7 +89,6 @@ while counter < len(info["response"]):
                 conn2.commit()
                 counter = counter + 1
 
-cur.close()
 
 #Replace xxxxxxxxxxxxxxxxxxxxxxxx with API-Key.
 with open(".apikey") as f:
@@ -131,7 +129,6 @@ while counter < len(info["response"]):
                 conn2.commit()
                 counter = counter + 1
 
-cur.close()
 
 
 #Replace xxxxxxxxxxxxxxxxxxxxxxxx with API-Key.
