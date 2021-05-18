@@ -68,9 +68,9 @@ def topAssists():
     status=200,
     mimetype='application/json'
   )
-  return ret #Return the data in a string format
-  
- @app.route("/topYellows")
+  return ret #Return the data in a string format  
+ 
+@app.route("/topYellows")
 def topYellows():
   cur = conn2.cursor() #create a connection to the SQL instance
   cur.execute('''SELECT * FROM topYellows''') # execute an SQL statment
